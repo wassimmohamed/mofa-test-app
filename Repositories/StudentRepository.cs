@@ -47,6 +47,10 @@ namespace mofa_test.Repositories
                 };
                         context.Students.AddRange(students);
                         context.SaveChanges();
+                        
+                        context.StudentNationality.AddRange(new StudentNationality { ID = 1, StudentId = 1, NationalityId = 1 }, new StudentNationality { ID = 2, StudentId = 2, NationalityId = 1 });
+                        context.SaveChanges();
+                        
                     }
                     if (!context.FamilyMembers.Any())
                     {
@@ -70,6 +74,8 @@ namespace mofa_test.Repositories
                 },
                 };
                         context.FamilyMembers.AddRange(familyMembers);
+                        context.SaveChanges();
+                        context.FamilyMembersNationalities.AddRange(new FamilyMemberNationality { ID = 1, FamilyMemberId= 1, NationalityId = 1 }, new FamilyMemberNationality { ID = 2, FamilyMemberId = 2, NationalityId = 1 });
                         context.SaveChanges();
                     }
 
